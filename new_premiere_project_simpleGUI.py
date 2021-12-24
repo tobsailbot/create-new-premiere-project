@@ -41,14 +41,15 @@ ahk.send_input('{Enter}{Enter}')
 ahk.send_input('+{Tab}''+{Tab}''+{Tab}''+{Tab}')
 ahk.send_input('{Enter}')
 
-time.sleep(0.5)
+time.sleep(3)
 
 # creates a new sequence
+win.activate()
 ahk.send_input('^n')
 ahk.type(projName)
 ahk.send_input('{Enter}')
 
-time.sleep(1)
+
 
 # open the media folders
 subprocess.Popen(f'explorer "{box[2]}"')
