@@ -1,0 +1,1 @@
+@pyw.exe C:\PythonScripts\create_new_premiere_project\new_premiere_project_simpleGUI.py
