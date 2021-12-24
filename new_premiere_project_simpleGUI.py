@@ -1,13 +1,16 @@
 from ahk import AHK
 import os
-import sys
 import easygui as eg
+import subprocess
+import time
+
 
 ahk = AHK()
 
 campos = ['Project Name', 'Project Path', 'Media Folder 1','Media Folder 2','Media Folder 3']
 datos = []
 default = ['',r'D:\TOBI-PC\Descargas\3-VIDEO PROJECTS',r'F:\VIDEO MEDIA\OBS VIDEOS',r'D:\TOBI-PC\Descargas\3-VIDEO PROJECTS\1.VIDEO EDITING RESOURCES\SOUNDS\SOUND FX',r'D:\TOBI-PC\Descargas\3-VIDEO PROJECTS\1.VIDEO EDITING RESOURCES\MEDIA\EMOJIS PNG']
+
 
 box = eg.multenterbox(msg='Enter the name and folders:',title='New Premiere Project',fields=campos, values=default)
 
@@ -38,7 +41,9 @@ ahk.send_input('{Enter}')
 
 
 
+time.sleep(1)
 
 
-
-
+subprocess.Popen(f'explorer "{box[2]}"')
+subprocess.Popen(f'explorer "{box[3]}"')
+subprocess.Popen(f'explorer "{box[4]}"')
